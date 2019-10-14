@@ -178,4 +178,7 @@ div.todo .button, .price{
     max-width: 600px;
     width: 80vw;
   }
+  form{
+    padding: 0;
+  }
 }
