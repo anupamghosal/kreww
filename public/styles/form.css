@@ -46,7 +46,7 @@ a{
 
 .container.form-cont{
   flex-basis: 45%;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
