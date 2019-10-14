@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title KrewwMaster
+    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='/styles/mobNav.css', type='text/css')
+    link(rel='stylesheet', href='/styles/webNav.css', type='text/css')
+    link(rel='stylesheet', href='/styles/hover.css', type='text/css')
+    link(rel='stylesheet', href='/styles/associateNav.css', type='text/css')
+    script(src='/js/mobNav.js')
+
+  body
+    include nav.pug
+    
+    block content
+    
+    script(src='/bower-components/jquery/dist/jquery.js')
+    script(src='/js/hover.js')

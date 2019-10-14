@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+  link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
+
+  .centre-wrapper
+    .centre-cont
+      h1 Orders
+      if orders.length === 0 || !orders
+        p You have no orders. 
+        a.button(href='/') Schedule Now
+      if orders
+      if orders.length != 0
+          ul.order.list
+            each order, i in orders
+              if order.repair && !order.service
+                - var todo = " repair";  
+              if order.service && !order.Repair
+                - var todo = " service";
+              if order.service && order.repair
+                - var todo = " repair and service";
+              li.order-li
+                .info-grp
+                  h4= order.work + todo
+                  .in-line
+                    div
+                      span= order.date
+                      br
+                      if order.time == 7 || order.time == 9 || order.time == 11
+                        span= order.time+ ' AM'
+                      if order.time == 3 || order.time == 5 
+                        span= order.time+ ' PM'
+                    a.button(href='/users/orders/'+order.id) view detail
+      
+              
+          

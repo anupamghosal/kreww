@@ -1,0 +1,132 @@
+body{
+   overflow-x: hidden;
+  }
+
+
+a{
+text-decoration: none;
+}
+
+  .banner{
+  width: 99vw;
+  height: calc(100vh - 3.5em + 10px);
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.9) ,rgba(0,0,0,0.1));
+  overflow: hidden;
+  margin-bottom: 0;
+  position: relative;
+
+}
+
+.ban-cont{
+  position: relative;
+  z-index: -999;
+  background-image: url(../assets/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+
+}
+
+.fig-cap{
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+  width: 45vw;
+  max-width: 450px;
+  padding: 40px 60px;
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.fig-cap p{
+  color: #eee;
+  font-weight: 200;
+
+
+}
+.ban-but{
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  right: -16%;
+  bottom: -20%;
+  color: #111;
+  padding: 20px 50px;
+  background-color:  rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.6);
+  transition: transform 300ms ease-in-out;
+}
+
+.fig-cap, .ban-but{
+  border-radius: 10px;
+
+}
+
+.ban-but:hover{
+  transform: scale(1.1);
+}
+
+.big-logo{
+  position: absolute;
+  top:5%;
+  left: 5%;
+  height: 35%;
+  width: 50%;
+  background-image: url(../assets/kWhite.svg);
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.man{
+  z-index: -3;
+  position: relative;
+  top: -45%;
+  left: 50%;
+  height: 70%;
+  width: 40%;
+  background-image: url(../assets/man.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+@media only screen and (max-width:650px){
+  .banner{
+    height: calc(85vh - 4em + 10px);
+    width: 100vw;
+    height: 100vh;
+
+  }
+
+  .big-logo{
+    height: 35%;
+    width:30%;
+  }
+
+  .ban-but{
+    transform: scale(0.8);
+    right: 10%;
+  }
+
+  .ban-but:hover{
+    transform: scale(0.9);
+  }
+
+  .man{
+    top: -55%;
+    left: 10%;
+    height: 100%;
+    width: 90%;
+  }
+
+  .fig-cap{
+    bottom: 35%;
+  }
+
+  .big-logo , .fig-cap{
+    left: 10%;
+  }
+}

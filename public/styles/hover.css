@@ -1,0 +1,42 @@
+
+
+
+.Hover {
+	--width: 100%;
+	--time: 0.2s;
+	border-radius: 4px;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin-top: -0.25em;
+	height: 2em;
+}
+
+.Hover li {
+	position: relative;
+	z-index: 5;
+	transition: color var(--time);
+}
+
+.Hover:hover li {
+	color: #fff;
+}
+
+.bubble {
+	position: absolute;
+	border-radius: 100%;
+
+	display: block;
+	content: "";
+	z-index: 99999+;
+	width: 0;
+	height: 0;
+	background:  #212121;
+	transform: translate(-50%, -50%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.Hover:hover .bubble {
+	width: calc(var(--width)*2.25);
+	padding-top: calc(var(--width)* 2.25);
+}

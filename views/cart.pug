@@ -1,0 +1,83 @@
+extends layout
+
+
+block content
+  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+  link(rel='stylesheet', href='/styles/cart.css', type='text/css')
+
+
+
+  .wrapper
+    .container
+        if appliances
+          each appliance, i in appliances
+            if appliance.name === title
+              .item-bg(style=`background-image: url(../assets/appliance/background/${appliance.image}.jpg)`)
+                .item-img
+                  img.prod-img(src='/assets/appliance/lined/' + appliance.image + '.svg')
+                h1.order-item #{title}
+              .description
+                h5 Reparing
+                p= appliance.description
+              
+              .description  
+                h5 Servicing
+                p= appliance.description
+        if services
+          each service, i in services
+            if service.name === title
+              .item-bg(style=`background-image: url(../assets/services/background/${service.image}.jpg)`)
+                .item-img
+                  img.prod-img(src='/assets/services/lined/' + service.image + '.svg')
+                h1.order-item #{title}
+              .description
+                h5 servicing
+                p= service.description
+
+
+
+    .container.form-cont
+        form(method= 'POST', action='/order/'+title)
+            != messages('message', local)
+            if errors
+              .errors.messages
+                ul
+                each error, i in errors 
+                  li.alert-error= error.msg
+
+            input.input-box(name='address', type='text', placeholder='Address')
+        
+            input.input-box(name='areacode', type='text', placeholder='Areacode')
+            
+            .in-line
+              label.repair-check.check-cont
+                input.check(name='repair', type='checkbox')
+                span.checkmark  &#10004
+                span.check-label Repair
+              label.service-check.check-cont
+                input.check(name='service', type='checkbox')
+                span.checkmark  &#10004
+                span.check-label Service
+            
+            .in-line
+              span Select date
+              select.date-select(name="date")
+                each i, j in upcoming
+                  option(value=i.date +'th '+ i.day+' '+ month) #{i.date}th #{i.day}, #{month}
+            .in-line
+              span Select time
+              select.time-select(name="time")
+                option(value="7") 7 am
+                option(value="9") 9 am
+                option(value="11") 11 am
+                option(value="3") 3 pm
+                option(value="5") 5 pm
+                
+    
+                      
+            
+                    
+              
+              
+            input.submit-detail.button(type='submit' value='Checkout') 
+          

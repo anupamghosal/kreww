@@ -1,0 +1,47 @@
+extends layout
+
+block content
+
+  link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
+  .centre-wrapper
+    .centre-cont
+
+      if order.repair && !order.service
+        - var todo = " repair";  
+      if order.service && !order.Repair
+        - var todo = " service";
+      if order.service && order.repair
+        - var todo = "repair and service";
+      h1.work-label= order.work + ' ' +todo
+      ul 
+        li.work.work-li
+          strong From:
+          span= ' '+order.name
+        
+        li.work.work-li
+          strong Address:
+          span= ' '+order.address
+        li.work.work-li
+          strong Area code:
+          span= ' '+order.areacode
+    
+        li.work.work-li
+          strong Date:
+          span= ' '+order.date
+          
+        li.work.work-li
+          strong Time:
+          if order.time === 7 || order.time === 11 || order.time === 9
+            span= ' '+order.time+ ' AM'
+            
+          if order.time === 3 || order.time === 5
+            span= ' '+order.time + ' PM'
+        if !order.accepted  
+          li.work.in-line.work-li
+            a.accept.button(href='#' data-id=order._id) Claim
+            a.reject.button(href='#' data-id=order._id) Ignore
+          
+          
+    script(src='/bower-components/jquery/dist/jquery.js')        
+    script(src='/js/accept.js')
+    script(src='/js/reject.js')

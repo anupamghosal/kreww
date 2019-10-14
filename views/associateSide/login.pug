@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+  
+  #masterBg
+    .wrapper
+      .container
+      .container.form-cont
+    
+        form(method= 'POST', action='/associate/login')
+          .logo-container
+            .logo
+            h2.moto Simple 
+              span .
+              | Convinient
+        
+        
+        
+          != messages('message', local)
+          input.input-box(name='email', type='email', placeholder='Email')
+        
+          input.input-box(name='password', type='password', placeholder='Password')
+          
+          input.button( type='submit' value='Login')
+          .line
+          
+          h5.dont Don't have an account?
+          a.button(href="/associate/register") Register
+  

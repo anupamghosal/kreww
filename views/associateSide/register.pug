@@ -1,0 +1,45 @@
+extends layout
+
+block content
+
+  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+
+  #masterBg
+    .wrapper
+      .container
+      .container.form-cont
+      
+        form(method= 'POST', action='/associate/register')
+          .logo-container
+            .logo
+            h2.moto Simple 
+              span .
+              | Convinient
+      
+      
+          != messages('message', local)
+          .errors.messages
+            if errors
+              ul
+              each error, i in errors 
+                li.alert-error= error.msg
+    
+          .exists.messages
+            if exists
+              li= exists
+              
+            
+          
+          
+        .name
+          input.input-box(name='firstName', type='text', placeholder='First Name')    
+          
+          input.input-box(name='lastName', type='text', placeholder='Last Name')    
+        
+        input.input-box(name='email', type='email', placeholder='Email')    
+        
+        input.input-box(name='password', type='password', placeholder='Password')    
+        
+        input.input-box(name='password2', type='password', placeholder='Re-enter Password')
+        
+        input.button(type='submit' value='Register')

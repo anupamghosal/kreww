@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/styles/profile.css', type='text/css')
+  .wrapper
+    a.logout(href='/users/logout') Logout
+    .user-info
+      .avatar
+      a.edit(href='/associate/profile/edit') 
+        span.icon &#9998
+        span.label Edit
+      .user-name
+        h1= associate.firstName
+        h1= associate.lastName
+    
+    .user-detail
+      ul.user-details
+        li.user-detail-item
+          h3 Email:
+          div #{associate.email}
+        li.user-detail-item
+          h3 Saved address:
+          if associate.address
+            div #{associate.address}
+          if !associate.address
+            div No address added
+        li.user-detail-item
+          h3 Contact Number:
+          if associate.phone
+            div.detail #{associate.phone}
+          if !associate.phone
+            div.detail No phone Number added
+        li.user-detail-item
+          h3 Saved cards:
+          if associate.card
+            div.detail #{associate.card}
+          if !associate.card
+            div.detail No saved cards
+
+    

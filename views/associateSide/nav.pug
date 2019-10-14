@@ -1,0 +1,41 @@
+#toggling.menu-wrap
+  
+  ul.menu-cont
+    a.item-ref(href='/associate/dashboard')
+      li.menu-item Dashboard
+    a.item-ref(href='/associate/profile')
+      li.menu-item Profile
+    a.item-ref(href='/associate/todo')
+      li.menu-item Get scheduled
+
+// Mobile Nav ends
+
+//common part
+.header
+  #hamburger.nav
+    .nav-toggle(onclick='toggleMenu()')
+      span#line.hamLine
+  
+  #logo.nav
+  h5.asso associate
+    
+  
+  // web Nav
+  .webmenu-wrap
+    .location-cont
+    
+    ul.web-menu
+      a.Hover.item-ref(href='/associate/dashboard')
+        li.menu-item Dashboard
+        span.bubble
+      a.item-ref.Hover(href='/associate/profile')
+        li.menu-item Profile
+        span.bubble
+      a.item-ref.Hover(href='/associate/todo')
+        li.menu-item Get scheduled
+
+        span.bubble
+
+    
+  
+  

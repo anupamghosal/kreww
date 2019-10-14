@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
+  .centre-wrapper
+    .centre-cont
+      h1 welcome #{associate.firstName} #{associate.lastName}
+      
+      if orders
+  
+        ul.list-group
+          
+          each order, i in orders
+              
+              li.list-group-item
+              
+                if order.repair && !order.service
+                  - var todo = " repair";  
+                if order.service && !order.Repair
+                  - var todo = " service";
+                if order.service && order.repair
+                  - var todo = "repair and service";
+                .todo
+                  .in-col.work
+                    a.work-label(href='/associate/'+order._id)= order.work + ' ' +todo
+                    .in-line
+                      .in-col
+                        span.info.address= order.address
+                        span.info.arcode= order.areacode
+                      if order.time === 7 || order.time === 11 || order.time === 9
+                        span.info.time.right= 'at '+order.time+ ' AM'
+                        
+                      if order.time === 3 || order.time === 5
+                        span.info.time.right= 'at '+order.time + ' PM' 
+                  .in-col.right.res
+                    span
+                    span.price $20
+                    span
+      if !orders 
+      
+        p You have nothing scheduled!
+  
+        a.button(href="/associate/todo") Get Scheduled
+        
+      
+      
+    

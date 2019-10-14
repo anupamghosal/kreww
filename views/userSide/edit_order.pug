@@ -1,0 +1,89 @@
+extends ../layout
+block content 
+
+  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+  link(rel='stylesheet', href='/styles/cart.css', type='text/css')
+  link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
+
+
+  .centre-wrapper
+    .centre-cont
+      
+      form(method= 'POST', action='/users/orders/'+order.id)
+        h1 Edit order
+        if order.repair && !order.service
+          - var todo = " repair";  
+        if order.service && !order.Repair
+          - var todo = " service";
+        if order.service && order.repair
+          - var todo = "repair and service";
+        h4= order.work + todo
+
+        
+          
+        .in-line
+          label.repair-check.check-cont
+            if order.repair
+              input.check(name='repair', type='checkbox', checked)
+            if !order.repair
+              input.check(name='repair', type='checkbox')
+            span.checkmark  &#10004
+            span.check-label Repair
+          label.service-check.check-cont
+            if order.service
+              input.check(name='service', type='checkbox', checked)
+            if !order.service
+              input.check(name='service', type='checkbox')
+            span.checkmark  &#10004
+            span.check-label Service
+        
+        .in-line
+          span Select date
+          select.date-select(name="date")
+            each i, j in upcoming
+              - var d2 = `${i.date}th ${i.day} ${month}`
+
+              if order.date == d2
+                option(value=i.date +'th '+ i.day+' '+ month selected) #{i.date}th #{i.day}, #{month}
+              if d1 != d2
+                option(value=i.date +'th '+ i.day+' '+ month) #{i.date}th #{i.day}, #{month}
+        .in-line
+          span Select time
+          select.time-select(name="time")
+            if order.time === 7
+              option(value="7" selected) 7 am
+            if order.time != 7
+              option(value="7") 7 am
+            
+            if order.time === 9
+              option(value="9" selected) 9 am
+            if order.time != 9
+              option(value="9") 9 am
+              
+            if order.time === 11
+              option(value="11" selected) 11 am
+            if order.time != 11
+              option(value="11") 11 am
+              
+            if order.time === 3
+              option(value="3" selected) 3 pm
+            if order.time != 3
+              option(value="3") 3 pm
+            
+            if order.time === 5
+              option(value="5" selected) 5 pm
+            if order.time != 5
+              option(value="5") 5 pm
+            
+
+                  
+        
+                
+          
+          
+        input.submit-detail.button(type='submit' value='Reschedule')
+        a.button.delete(href='/users/orders', data-id= order._id) Cancel order
+      
+            
+      script(src='/bower-components/jquery/dist/jquery.js')
+      script(src='/js/delete.js')

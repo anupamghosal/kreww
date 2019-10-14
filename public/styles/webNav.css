@@ -1,0 +1,89 @@
+@media only screen and (min-width:650px) {
+
+  #hamburger , .menu-wrap{
+    display: none;
+  }
+
+input:focus{
+  outline: none;
+}
+  .header{
+    height: 1.5em;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+  #todo{
+
+  	background-position: left;
+    height: auto;
+  }
+
+  #logo{
+
+    height: auto;
+    margin: 1px;
+    background-position: right;
+    margin-right: 3em;
+  }
+
+  .webmenu-wrap{
+    justify-content: center;
+    display: flex;
+    margin: 0 30px
+  }
+
+  .web-menu{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .location-cont{
+  	width: 25vw;
+    margin: 0 1em;
+    padding: 3px;
+    height: 1.5em;
+    background: #212121;
+    font-size: 0.8em;
+    align-items: right;
+    overflow: hidden;
+
+	}
+
+  .location-img{
+    margin: 2px;
+    width: 2em;
+    margin-left: -0.5em;
+    opacity: 0;
+    order: -1;
+    transition: all 250ms ease-in;
+  }
+  .location-input{
+    order: 2;
+    color: #fff;
+  }
+  .location-input:focus + .location-img{
+    margin-left: 0;
+    opacity: 1;
+    }
+
+
+
+    .menu-cont{
+      height: 1.5em;
+      align-items: baseline;
+    }
+
+    .menu-item{
+      border-bottom: none;
+      color: #ddd;
+      padding: 0 1.5em;
+      font-weight: 300;
+      font-size: 0.8em;
+      margin-top: 0.75em;
+    }
+
+
+
+}

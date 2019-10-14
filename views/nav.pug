@@ -1,0 +1,39 @@
+#toggling.menu-wrap
+  .location-cont
+    img.location-img(src='/assets/location.svg')
+    input.location-input(type='text', name='Location', placeholder='Location')
+  ul.menu-cont
+    a.item-ref(href='/')
+      li.menu-item Home
+    a.item-ref(href='/users/profile')
+      li.menu-item Profile
+
+// Mobile Nav ends
+
+//common part
+.header
+  #hamburger.nav
+    .nav-toggle(onclick='toggleMenu()')
+      span#line.hamLine
+  #logo.nav
+  
+  // web Nav
+  .webmenu-wrap
+    .location-cont
+      input.location-input(type='text', name='Location', placeholder='Enter Location')
+      img.location-img(src='/assets/location.svg')
+    ul.web-menu
+      a.Hover.item-ref(href='/')
+        li.menu-item Home
+        span.bubble
+      a.item-ref.Hover(href='/users/profile')
+        li.menu-item Profile
+        span.bubble
+
+      // web Nav ends
+  a.nav.todo(href='/users/orders')
+    #todo.nav
+    
+    
+  
+  
