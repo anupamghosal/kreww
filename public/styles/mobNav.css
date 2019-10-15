@@ -38,6 +38,8 @@ border-radius: 10px;
 	background: #000;
 	color: rgba(255,255,255,1);
 	padding: 1em 1.5em;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 
 .nav{
