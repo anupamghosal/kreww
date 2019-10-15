@@ -123,6 +123,9 @@
  padding: 0.5em;
  }
 
+.mob{
+  display: none;
+}
 
 
 @media only screen and (max-width: 650px) {
@@ -146,5 +149,23 @@
 
   .description{
     font-size: 1em;
+  }
+
+  .wrapper{
+    flex-direction: column;
+  }
+
+  .mob{
+    display: block;
+
+  }
+
+  .web{
+    display: none;
+  }
+
+  h1.order-item {
+    text-align: center;
+    padding-right: 0;
   }
 }

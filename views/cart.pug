@@ -8,6 +8,9 @@ block content
 
 
   .wrapper
+    - var d1
+    - var d2
+    - var d3
     .container
         if appliances
           each appliance, i in appliances
@@ -16,13 +19,19 @@ block content
                 .item-img
                   img.prod-img(src='/assets/appliance/lined/' + appliance.image + '.svg')
                 h1.order-item #{title}
-              .description
-                h5 Reparing
+              .description.web
+                h5 Reparing detail
                 p= appliance.description
+                
+                - d1 = appliance.description
               
-              .description  
-                h5 Servicing
+              .description.web  
+                h5 Servicing detail
                 p= appliance.description
+                
+                - d2 = appliance.description
+                
+              
         if services
           each service, i in services
             if service.name === title
@@ -30,9 +39,11 @@ block content
                 .item-img
                   img.prod-img(src='/assets/services/lined/' + service.image + '.svg')
                 h1.order-item #{title}
-              .description
-                h5 servicing
+              .description.web
+                h5 service detail
                 p= service.description
+                
+                - d3 = appliance.description
 
 
 
@@ -80,4 +91,19 @@ block content
               
               
             input.submit-detail.button(type='submit' value='Checkout') 
+            
+    if appliances        
+      .description.mob
+        h5 Repair detail
+        p= d1
+      
+      .description.mob
+        h5 Services detail
+        p= d2
+    
+    if services
+      .description.mob
+        h5 Service detail
+        p= d3  
           
+            
