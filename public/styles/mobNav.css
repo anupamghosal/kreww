@@ -159,7 +159,9 @@ a.todo{
 	top: 4em;
 	background-color: rgba(0,0,0,0.8);
 	-webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	
 	height: 0px;
 	width: 100vw;
 	overflow: hidden;
