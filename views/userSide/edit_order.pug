@@ -7,7 +7,7 @@ block content
 
 
 
-  if order.id
+  if order
     .centre-wrapper
       .centre-cont
 
@@ -90,5 +90,5 @@ block content
             
         script(src='/bower-components/jquery/dist/jquery.js')
         script(src='/js/delete.js')
-    if !order.id
+    if !order
       render ../404
