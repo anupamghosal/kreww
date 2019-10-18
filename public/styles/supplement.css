@@ -173,6 +173,10 @@ div.todo .button, .price{
   margin: 15px 0;
 }
 
+form{
+  border:none;
+}
+
 @media only screen and (max-width:650px)  {
   .centre-cont{
     max-width: 600px;
