@@ -85,9 +85,10 @@ block content
 
           input.submit-detail.button(type='submit' value='Reschedule')
           a.button.delete(href='/users/orders', data-id= order._id) Cancel order
-    if !order.id
-      render ../404
+
         
             
         script(src='/bower-components/jquery/dist/jquery.js')
         script(src='/js/delete.js')
+    if !order.id
+      render ../404
