@@ -21,9 +21,13 @@ block content
               if order.service && order.repair
                 - var todo = " repair and service";
               li.order-li
+                
                 .info-grp
                   h4= order.work + todo
+                  if order.accepted
+                    p ongoing
                   .in-line
+                  
                     div
                       span= order.date
                       br
@@ -32,6 +36,6 @@ block content
                       if order.time == 3 || order.time == 5 
                         span= order.time+ ' PM'
                     a.button(href='/users/orders/'+order.id) view detail
+                    
+                    
       
-              
-          
