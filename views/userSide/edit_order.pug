@@ -4,6 +4,8 @@ block content
   link(rel='stylesheet', href='/styles/form.css', type='text/css')
   link(rel='stylesheet', href='/styles/cart.css', type='text/css')
   link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
+  script(src="/socket.io/socket.io.js")
+
 
 
 
@@ -25,8 +27,15 @@ block content
             
           .in-line
             h4= order.work + todo
-            if order.accepted
-              span.ongoing ongoing
+            if order.accepted && !order.done
+              p
+                span.status.yellow ongoing
+            if order.accepted && order.done
+              p
+                span.status.green completed
+            if !order.accepted && !order.done
+              p
+                span.status waiting
 
 
           if !order.accepted
@@ -107,11 +116,26 @@ block content
                 if order.time === 3 || order.time === 5
                   span= ' '+order.time + ' PM'
             
-          a.button.delete(href='/users/orders', data-id= order._id) Cancel order
-
-        
+            
+            if !order.done      
+              div
+                li.work 
+                  strong OTP : #{order.otp}
+              
+              div.expectedReach
+                if !order.delay || order.delay == 0
+                  p KrewwMaster #{order.assoName} will reach on time.
+                  
+                if order.delay && order.delay != 0
+                  p KrewwMaster #{order.assoName} will unfortunately be #{order.delay} minutes late.
+          if !order.done
+            a.button.delete(href='/users/orders', data-id= order._id) Cancel order
+            
+          if order.done
+             p This order is completed
             
         script(src='/bower-components/jquery/dist/jquery.js')
         script(src='/js/delete.js')
-    if !order
-      include ../notfound.pug
+        script(src='/js/realtime.js')
+  if !order
+    include ../notfound.pug

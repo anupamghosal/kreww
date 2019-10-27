@@ -32,7 +32,7 @@ router.get('/:name', ensureCustomer, (req,res)=>{
       month-=1;
 
 			var i,upcoming=[];
-			 for(i=0; i<7; i++)
+			 for(i=0; i<=7; i++)
 			 {
 			 	upcoming.push({date: d1, day: days[d]});
 			 	if(d1+1 < lasts[month])
@@ -79,7 +79,7 @@ router.post('/:name',[
 
 ], (req,res)=> {
     let errors = validationResult(req);
-  //getting coming 5days
+  //getting coming 7days
       var today = new Date();
       var d= today.getDay();
       var days= ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
@@ -94,7 +94,7 @@ router.post('/:name',[
       month-=1;
 
       var i,upcoming=[];
-       for(i=0; i<7; i++)
+       for(i=0; i<=7; i++)
        {
         upcoming.push({date: d1, day: days[d]});
         if(d1+1 < lasts[month])
@@ -109,7 +109,7 @@ router.post('/:name',[
        }
 
        month = months[month];
-//ends 5 days
+//ends 7 days
   let cart = new Cart();
   cart.repair = req.body.repair ? true : false;
   cart.service = req.body.service ? true : false;
@@ -122,6 +122,7 @@ router.post('/:name',[
     cart.work = req.params.name;
     cart.date = req.body.date;
     cart.time= req.body.time;
+    cart.otp = Math.floor(Math.random()*(99999 - 10000 + 1));
 
 
 

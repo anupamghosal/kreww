@@ -9,6 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 
+
 const config = require('./config/database');
 const services = require('./Service');
 const appliances = require('./Appliance');
@@ -21,6 +22,17 @@ const appliances = require('./Appliance');
 
 //init app
 const app = express();
+
+//start server\
+const PORT = 5000;
+
+const server = app.listen(PORT, ()=> {
+  console.log(`server started on port ${PORT}`);
+});
+
+
+var io = require('socket.io')(server);
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -78,6 +90,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+//socket ----------------------
+
+io.on('connection', function(socket){
+  socket.on('refresh', (associate, order)=>{
+    io.emit('response', associate,order);
+  });
+  socket.on('disconnect', function(){
+  });
+});
+
+
+
 //Home route
 app.get('/', (req, res)=> {
   res.render('index', {
@@ -98,18 +122,3 @@ app.use('/associate', associate);
 //bring in Router for Associate side
 let order = require('./routes/order');
 app.use('/order', order);
-
-
-
-
-
-
-
-
-
-//start server\
-const PORT = 5000;
-
-app.listen(PORT, ()=> {
-  console.log(`server started on port ${PORT}`);
-});

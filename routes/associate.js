@@ -140,8 +140,8 @@ router.get('/todo',ensureAssociate, (req, res)=> {
 
       res.render('associateSide/todo', {
         title: 'Appointments',
-        orders: cart,
-        user: req.user.id
+        orders: cart.reverse(),
+        user: req.user
       });
     }
   });
@@ -151,7 +151,8 @@ router.get('/todo',ensureAssociate, (req, res)=> {
 router.get('/:id',ensureAssociate, (req,res)=>{
   Cart.findById(req.params.id, (err, cart)=> {
     res.render('associateSide/todoDetail', {
-      order : cart
+      order : cart,
+      user: req.user
     });
   });
 });
@@ -159,9 +160,11 @@ router.get('/:id',ensureAssociate, (req,res)=>{
 router.post('/orders/:id', (req,res)=> {
   const id = req.user.id;
   const resp = req.body.respon;
+  const delay = req.body.delay;
+  const assoName = req.user.firstName +' '+ req.user.lastName;
+  const otp = req.body.otp;
   if(resp === 'accepted'){
-    console.log(resp);
-    Cart.findOneAndUpdate({_id: req.body.orderID}, {accepted: id}, (err)=>{
+    Cart.findOneAndUpdate({_id: req.body.orderID}, {accepted: id, assoName: assoName}, (err)=>{
       if (err) throw err;
       else {
         req.flash('success', 'Appointment has been accepted');
@@ -174,7 +177,42 @@ router.post('/orders/:id', (req,res)=> {
         req.flash('success', 'Appointment has been rejected');
       }
     });
+  } else if(resp === 'delay') {
+    Cart.findOneAndUpdate({_id: req.body.orderID}, {delay: delay}, (err)=>{
+      if (err) throw err;
+      else {
+        req.flash('success', 'Delay notice has been sent successfully');
+      }
+    });
+  }  else if(resp === 'done'){
+      Cart.findOne({_id: req.body.orderID}, (err,cart)=>{
+        if(err) throw err;
+        else {
+          if(cart.otp == otp){
+            let order = {};
+            order.done = true;
+            Cart.updateOne({_id: req.body.orderID}, {done: 'true'}, (err)=> {
+              if (err) throw err;
+              else {
+                res.render('done');
+              }
+            });
+          } else {
+            req.flash('error', 'The OTP entered is incorrect!');
+            Cart.findOne({_id: req.body.orderID},(err,cart)=> {
+              if (err) throw err;
+              else {
+                res.render('todoDetail', {
+                  cart
+                });
+              }
+            });
+          }
+        }
+      });
   }
+
+
 });
 
 
@@ -194,12 +232,16 @@ router.post('/profile/edit',ensureAssociate, (req,res)=>{
 
   let query = {_id:req.user.id};
 
-  User.updateOne(query, order, (err)=> {
+  User.updateOne(query, user, (err)=> {
     if(err) throw err;
     else{
       res.redirect('/associate/profile');
     }
   });
+});
+
+router.get('/work/done', (req, res)=> {
+  res.render('done');
 });
 
 

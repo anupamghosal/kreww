@@ -24,8 +24,16 @@ block content
                 
                 .info-grp
                   h4= order.work + todo
-                  if order.accepted
-                    p ongoing
+                  if order.accepted && !order.done
+                    p
+                      span.status.yellow ongoing
+                  if order.accepted && order.done
+                    p
+                      span.status.green completed
+                  if !order.accepted && !order.done
+                    p
+                      span.status waiting
+                  
                   .in-line
                   
                     div

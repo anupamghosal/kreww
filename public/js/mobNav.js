@@ -1,4 +1,4 @@
-function toggleMenu() {
+ function toggleMenu() {
     var toggle = document.getElementById("toggling");
 
     if (toggle.style.height === "calc(100vh - 4em)")

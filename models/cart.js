@@ -47,6 +47,22 @@ let cartSchema = mongoose.Schema({
 
   rejected: {
     type: Array,
+  },
+
+  otp: {
+    type: Number,
+  },
+
+  delay: {
+    type: Number
+  },
+
+  assoName: {
+    type: String
+  },
+
+  done: {
+    type: Boolean
   }
 
 });

@@ -40,7 +40,7 @@ block content
                         span.info.time.right= 'at '+order.time + ' PM' 
                   .in-col.right.res
                     span.price $20
-                    a.accept.button(href='/associate/todo' data-id=order._id) Claim
+                    a.accept.button.update(href='/associate/todo' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
                     a.reject.button(href='/associate/todo' data-id=order._id) Ignore
       if !orders || f == 1
         div
