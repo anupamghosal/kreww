@@ -189,6 +189,7 @@ form{
   height: 2.5em;
   font-size: 0.9em;
   outline: none;
+  margin-right: 5px;
 }
 .done{
   padding: 7px 40px;
@@ -198,7 +199,7 @@ form{
   width: 45%;
 }
 
-input {
+input.otp {
   padding: 0 0.75em;
   height: 2em;
   font-size: 0.9em;
@@ -234,6 +235,19 @@ span.status.yellow{
   margin-bottom: 10px;
 }
 
+
+.late{
+  display: flex;
+}
+
+.late > select, .late > label, .late > a{
+  flex-basis: 28%;
+  flex-grow: 1;
+}
+
+.late > label {
+  margin: auto;
+}
 @media only screen and (max-width:650px)  {
   .centre-cont{
     max-width: 600px;

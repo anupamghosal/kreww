@@ -5,7 +5,7 @@ block content
   link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
   .centre-wrapper
     .centre-cont
-    
+      != messages('message', local)
       if !order.done
 
         if order.repair && !order.service
@@ -15,7 +15,9 @@ block content
         if order.service && order.repair
           - var todo = "repair and service";
         h1.work-label= order.work + ' ' +todo
-        != messages('message', local)
+        
+        
+        
         ul 
           li.work.work-li
             strong From:
@@ -44,7 +46,7 @@ block content
               a.accept.button.update(href='#' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
               a.reject.button(href='#' data-id=order._id) Ignore
           if order.accepted
-            li.work.work-li
+            li.work.work-li.late
               label I will reach
               
               select.lateDetail(name='late' id='delaySelect')
@@ -59,8 +61,8 @@ block content
               
             li.work.work-li
               .in-line
-                input(name="otp" type="number" placeholder='OTP' id='otp')
-                a.done.button.update(href="/associate/dashboard" data-id=order._id) Done
+                input.otp(name="otp" type="number" placeholder='OTP' id='otp')
+                a.done.button.update(href="#" data-id=order._id) Done
                 
       if order.done
         p This order is complete

@@ -7,6 +7,7 @@ $(document).ready(function() {
               orderID: id
             }).done(()=> {
               window.location.href= '/associate/todo';
+              location.reload();
             });
       });
   });

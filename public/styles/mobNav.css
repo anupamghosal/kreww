@@ -3,12 +3,25 @@
 	margin:0 ;
 	font-family: roboto, sans-serif;
 	-webkit-tap-highlight-color: transparent;
-	-webkit-user-select: none;
 	-webkit-touch-callout: none;
 	tap-highlight-color: transparent;
-	user-select: none;
 	touch-callout: none;
 }
+
+a,button, input[type="submit"], p, div, img{
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('roboto.eot'); /* IE9 Compat Modes */
+  src: url('roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('roboto.woff') format('woff'), /* Modern Browsers */
+  url('roboto.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 
 textarea,
 input.text,

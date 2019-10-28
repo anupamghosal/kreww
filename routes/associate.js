@@ -194,7 +194,7 @@ router.post('/orders/:id', (req,res)=> {
             Cart.updateOne({_id: req.body.orderID}, {done: 'true'}, (err)=> {
               if (err) throw err;
               else {
-                res.render('done');
+                req.flash('success', 'Order completed');
               }
             });
           } else {

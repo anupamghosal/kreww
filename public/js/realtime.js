@@ -10,6 +10,7 @@ $(document).ready(()=>{
   });
 
   socket.on('response', (associate,order)=> {
+    location.reload().delay(500);
     location.reload();
   })
 
