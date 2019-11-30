@@ -30,27 +30,25 @@ html
           h1.cont-label Appliance Repair and Services
           .repair.container
             each appliance, i in appliances
-              .item-wrap
-                .item
-                  .item-bg(style=`background-image: url(../assets/appliance/background/${appliance.image}.jpg)`)
-                  .item-img
-                    img.prod-img(src='assets/appliance/lined/' + appliance.image + '.svg')
-                  .schedule
-                    a(href='/order/'+appliance.name) schedule
-                .label= appliance.name
+              a(href='/order/'+appliance.name)
+                .item-wrap
+                  .item
+                    .item-bg(style=`background-image: url(../assets/appliance/background/${appliance.image}.jpg)`)
+                    .item-img
+                      img.prod-img(src='assets/appliance/lined/' + appliance.image + '.svg')
+                  .label= appliance.name
         .wrapper.service               
           h1.cont-label Home Assitance Services
           .service.container
             each service, i in services
-              .item-wrap
-                .item
-                  .item-bg(style=`background-image: url(../assets/services/background/${service.image}.jpg)`)
-                  .item-img
-                    img.prod-img(src='assets/services/lined/' + service.image + '.svg')
-                  .schedule
-                    a(href='/order/'+service.name) schedule
-                .label= service.name
-          
+              a(href='/order/'+service.name)
+                .item-wrap
+                  .item
+                    .item-bg(style=`background-image: url(../assets/services/background/${service.image}.jpg)`)
+                    .item-img
+                      img.prod-img(src='assets/services/lined/' + service.image + '.svg')
+                  .label= service.name
+            
 
 
     
