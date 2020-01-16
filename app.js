@@ -26,9 +26,7 @@ const app = express();
 //start server\
 const PORT = 5000;
 
-const server = app.listen(PORT, 34.240.27.47, ()=> {
-  console.log(`server started on port ${PORT}`);
-});
+const server = app.listen(PORT, 34.240.27.47);
 
 
 var io = require('socket.io')(server);
