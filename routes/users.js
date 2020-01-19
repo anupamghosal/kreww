@@ -122,7 +122,7 @@ router.get('/orders',ensureCustomer, (req,res)=> {
         if (err) throw err;
         else {
           res.render('userSide/userOrders', {
-            orders: orders,
+            orders: orders.reverse(),
             user: req.user
           });
         }
@@ -155,7 +155,7 @@ router.get('/orders/:id',ensureCustomer, (req,res)=>{
   			 	else
   			 		d1=1;
 
-  			 	if(d+1 < 7)
+  			 	if(d+1 <= 7)
   			 		d+=1;
   			 	else
   			 		d=0;

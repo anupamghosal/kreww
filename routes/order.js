@@ -40,7 +40,7 @@ router.get('/:name', ensureCustomer, (req,res)=>{
 			 	else
 			 		d1=1;
 
-			 	if(d+1 < 7)
+			 	if(d+1 <= 7)
 			 		d+=1;
 			 	else
 			 		d=0;
@@ -102,7 +102,7 @@ router.post('/:name',[
         else
           d1=1;
 
-        if(d+1 < 7)
+        if(d+1 <= 7)
           d+=1;
         else
           d=0;

@@ -6,7 +6,7 @@
 	--time: 0.2s;
 	border-radius: 4px;
 	position: relative;
-	display: inline-block;
+	display: flex;
 	overflow: hidden;
 	margin-top: -0.25em;
 	height: 2em;
@@ -23,9 +23,9 @@
 }
 
 .bubble {
+	margin: auto;
 	position: absolute;
 	border-radius: 100%;
-
 	display: block;
 	content: "";
 	z-index: 99999+;

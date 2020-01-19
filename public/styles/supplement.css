@@ -10,10 +10,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .centre-wrapper{
+  position: relative;
+  height: calc(100vh - 3.5em);
   display: flex;
   width: 100%;
-  height:calc(100% - 3.5em);
-  position: absolute;
 }
 
 li{
@@ -21,17 +21,13 @@ li{
 }
 
 .centre-cont{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
   margin: auto;
   width: 30vw;
   max-width: 600px;
   min-width: 300px;
   display: flex;
   flex-direction: column;
-
 }
 
 .centre-cont h1, .centre-cont a{
@@ -211,21 +207,60 @@ input.otp {
 
 
 span.status{
-  padding: 2px 8px;
-  border: 1px solid #000;
-  border-radius: 25px;
-  font-size: 0.8em;
+font-size: 10px;
+font-weight: 600;
+border-radius: 25px;
+padding: 2.5px 10px;
+text-align: center;
+animation: ongoing 3s linear infinite;
+
 }
 
 span.status.green{
-  border-color: #2c9645;
-  color: #2c9645;
+  border: 1px solid #2c9645;
+  background: linear-gradient(to right, #2c9645 25%, #2c9645 70%,#2c9645 100%);
+  background-size: 100% auto;
+  color: #000;
+  background-clip: text,border;
+  text-fill-color: transparent;
+  -webkit-background-clip: text,border;
+  -webkit-text-fill-color: transparent;
+
+
 }
 
+
+
 span.status.yellow{
-  color: #969100;
-  border-color: #969100;
+  border: 1px solid #969100;
+  background: linear-gradient(to right, #969100 25%, #96aa00 70%,#969100 100%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text,border;
+  text-fill-color: transparent;
+  -webkit-background-clip: text,border;
+  -webkit-text-fill-color: transparent;
 }
+
+
+span.status.wait{
+  border: 1px solid #222;
+  background: linear-gradient(to right, #000 25%, #555 70%,#000 100%);
+
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text,border;
+  text-fill-color: transparent;
+  -webkit-background-clip: text,border;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes ongoing {
+    to {
+      background-position: 200% center;
+    }
+  }
 
 .mar-top{
   margin-top: 6px;

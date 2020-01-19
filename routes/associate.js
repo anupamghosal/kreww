@@ -124,7 +124,7 @@ router.get('/dashboard',ensureAssociate, (req,res)=> {
     else{
       res.render('associateSide/dashboard', {
         associate: req.user,
-        orders: cart
+        orders: cart.reverse()
       });
     }
   });

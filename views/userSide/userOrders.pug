@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
-  link(rel='stylesheet', href='/styles/form.css', type='text/css')
+
   link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
 
   .centre-wrapper
     .centre-cont
-      h1 Orders
+      h1.page-label Orders
       if orders.length === 0 || !orders
         p You have no orders. 
         a.button(href='/') Schedule Now
@@ -32,7 +32,7 @@ block content
                       span.status.green completed
                   if !order.accepted && !order.done
                     p
-                      span.status waiting
+                      span.status.wait waiting
                   
                   .in-line
                   

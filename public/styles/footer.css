@@ -1,0 +1,44 @@
+footer{
+  padding: 5vw;
+  background: black;
+  height: 25vh;
+  width: 89.5vw;
+  bottom: 0;
+  position: sticky;
+  z-index: -5;
+  color: white;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5em;
+  font-size: 10px;
+}
+
+
+
+.circle{
+  margin: 10px auto;
+  height: 60px;
+  width: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #444;
+  border-radius: 50%;
+}
+
+
+.col23{
+  display: flex;
+  flex-direction: column;
+  flex-basis:28%;
+  color: #aaa;
+  align-items: center;
+}
+
+strong{
+  color: #fff;
+}
+
+
+p.foot{
+  text-align: center;
+  padding: 5px 15px;
+}
