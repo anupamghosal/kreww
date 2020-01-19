@@ -26,8 +26,8 @@ const app = express();
 //start server\
 const PORT = 5000;
 
-const server = app.listen(PORT, ()=> {
-  console.log(`server started on port ${PORT}`);
+const server = app.listen(PORT, ()=>{
+console.log(`Server started on port ${PORT}`);
 });
 
 
