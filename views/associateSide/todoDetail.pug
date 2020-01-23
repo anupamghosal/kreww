@@ -2,9 +2,13 @@ extends layout
 
 block content
 
+
   link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
   .centre-wrapper
+    if order.accepted
+      include ../chat.pug 
     .centre-cont
+
       != messages('message', local)
       if !order.done
 
@@ -45,7 +49,8 @@ block content
             li.work.in-line.work-li
               a.accept.button.update(href='#' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
               a.reject.button(href='#' data-id=order._id) Ignore
-          if order.accepted
+       
+          
             li.work.work-li.late
               label I will reach
               
@@ -63,9 +68,9 @@ block content
               .in-line
                 input.otp(name="otp" type="number" placeholder='OTP' id='otp')
                 a.done.button.update(href="#" data-id=order._id) Done
-                
       if order.done
         p This order is complete
+        include ../review.pug
           
     script(src='/bower-components/jquery/dist/jquery.js')        
     script(src='/js/accept.js')

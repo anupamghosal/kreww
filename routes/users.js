@@ -6,7 +6,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 
 
-
+let upcoming = require('../dateHelper');
 
 const { ensureCustomer } = require('../config/authUser');
 
@@ -131,42 +131,14 @@ router.get('/orders',ensureCustomer, (req,res)=> {
 
 
 router.get('/orders/:id',ensureCustomer, (req,res)=>{
-
   Cart.findById(req.params.id, (err, order)=> {
-    var today = new Date();
-  			var d= today.getDay();
-  			var days= ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
-  			"Sunday"];
-
-  			var lasts = [31, 28, 31, 30, 31, 30, 31, 31,30, 31,30, 31];
-        var months = ["Jan", "Feb", "Mar", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-
-  			var d1= today.getDate();
-  			d-=1;
-  			var month= today.getMonth();
-        month-=1;
-
-  			var i,upcoming=[];
-  			 for(i=0; i<=7; i++)
-  			 {
-  			 	upcoming.push({date: d1, day: days[d]});
-  			 	if(d1+1 < lasts[month])
-  			 		d1+=1;
-  			 	else
-  			 		d1=1;
-
-  			 	if(d+1 <= 7)
-  			 		d+=1;
-  			 	else
-  			 		d=0;
-  			 }
-
-         month = months[month];
     res.render('userSide/edit_order', {
       title: 'Edit Order',
       order: order,
-      upcoming
+      upcoming,
+      username: req.user.id
     });
+    console.log(req.user);
   });
 });
 

@@ -10,7 +10,6 @@ a{
   text-decoration: none;
 }
 
-
 .choose-wrap{
   padding: 0 15vw;
   max-width: 960px;
@@ -142,7 +141,7 @@ a{
 
 .item:hover .item-bg{
   transform: scale(1);
-  filter: blur(0.5bpx);
+  filter: blur(0.5px);
 }
 
 .item-wrap:hover .item-img{

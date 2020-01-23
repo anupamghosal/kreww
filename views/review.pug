@@ -1,1 +1,14 @@
-h1 rating
+div.rating#rating
+  h5 rate your experience
+  .stars(data-rating='0')
+    span.star &nbsp;
+    span.star &nbsp;
+    span.star &nbsp;
+    span.star &nbsp;
+    span.star &nbsp;
+
+  textarea.review(placeholder='Write a review')
+  a.button#reviewSub(href="#") submit
+  
+script(type="text/javascript" , src="/js/review.js")
+script(type="text/javascript" , src="/js/sendReview.js")

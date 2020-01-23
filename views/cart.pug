@@ -76,7 +76,7 @@ block content
               span Select date
               select.date-select(name="date")
                 each i, j in upcoming
-                  option(value=i.date +'th '+ i.day+' '+ month) #{i.date}th #{i.day}, #{month}
+                  option(value=i.date +'th '+ i.day+' '+ i.month) #{i.date}th #{i.day}, #{i.month}
             .in-line
               span Select time
               select.time-select(name="time")

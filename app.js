@@ -96,7 +96,13 @@ io.on('connection', function(socket){
   socket.on('refresh', (associate, order)=>{
     io.emit('response', associate,order);
   });
+
+  socket.on('chat', function(data){
+    io.sockets.emit('chat', data);
+  });
+
   socket.on('disconnect', function(){
+
   });
 });
 

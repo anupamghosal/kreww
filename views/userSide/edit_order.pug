@@ -7,11 +7,14 @@ block content
   script(src="/socket.io/socket.io.js")
 
 
-
+  
 
   if order
     .centre-wrapper
+      if order.accepted && !order.done
+        include ../chat.pug  
       .centre-cont
+        
 
         form(method= 'POST', action='/users/orders/'+order.id)
           if !order.accepted
@@ -35,7 +38,7 @@ block content
                 span.status.green completed
             if !order.accepted && !order.done
               p
-                span.status waiting
+                span.status.wait waiting
 
 
           if !order.accepted
@@ -45,15 +48,17 @@ block content
                   input.check(name='repair', type='checkbox', checked)
                 if !order.repair
                   input.check(name='repair', type='checkbox')
-                span.checkmark  &#10004
-                span.check-label Repair
+                .check-bg
+                  span.checkmark  &#10004
+                  span.check-label Repair
               label.service-check.check-cont
                 if order.service
-                  input.check(name='service', type='checkbox', checked)
+                  input.check(name='service', type='checkbox',checked)
                 if !order.service
                   input.check(name='service', type='checkbox')
-                span.checkmark  &#10004
-                span.check-label Service
+                .check-bg
+                  span.checkmark  &#10004
+                  span.check-label Service
           
             .in-line
               span Select date
@@ -62,9 +67,9 @@ block content
                   - var d2 = `${i.date}th ${i.day} ${month}`
 
                   if order.date == d2
-                    option(value=i.date +'th '+ i.day+' '+ month selected) #{i.date}th #{i.day}, #{month}
+                    option(value=i.date +'th '+ i.day+' '+ i.month selected) #{i.date}th #{i.day}, #{i.month}
                   if d1 != d2
-                    option(value=i.date +'th '+ i.day+' '+ month) #{i.date}th #{i.day}, #{month}
+                    option(value=i.date +'th '+ i.day+' '+ i.month) #{i.date}th #{i.day}, #{i.month}
             .in-line
               span Select time
               select.time-select(name="time")
@@ -128,14 +133,20 @@ block content
                   
                 if order.delay && order.delay != 0
                   p KrewwMaster #{order.assoName} will unfortunately be #{order.delay} minutes late.
+              
+              
+                
           if !order.done
             a.button.delete(href='/users/orders', data-id= order._id) Cancel order
             
           if order.done
              p This order is completed
+             include ../review.pug
             
         script(src='/bower-components/jquery/dist/jquery.js')
         script(src='/js/delete.js')
         script(src='/js/realtime.js')
+        
+            
   if !order
     include ../notfound.pug
