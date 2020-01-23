@@ -32,10 +32,9 @@ box-shadow: 0 0 10px #fff;
 }
 
 @keyframes glowy {
-
-
   to{
-    box-shadow: 0 0 0px #fff;
+    box-shadow: 0 0 0px #666;
+}
 }
 
 .circle#a{
