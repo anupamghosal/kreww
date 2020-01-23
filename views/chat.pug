@@ -1,0 +1,17 @@
+
+
+.chat
+  .chat-toggle
+    p Chat
+    .close-icon
+      span
+  .chat-cont
+    #output
+    #input-area
+      textarea#message(rows='1', type='text' placeholder='Type a message')
+      button#send(data-user=username) >
+    
+    
+  link(rel='stylesheet', href='/styles/chat.css', type='text/css')
+  script( type="text/javascript" , src="/js/chatClient.js")
+  script( type="text/javascript" , src="/js/toggleChat.js")
