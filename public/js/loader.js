@@ -6,8 +6,12 @@ queue.on("progress", event=>{
   console.log(progress);
   $('#progress').css("width",progress);
   if(progress == "100%") {
-    $('#loader path').css({ 'fill': '#000', 'stroke-width': '0px'});
-      $('#loader').slideUp();
+    setTimeout(()=>{
+      $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
+        $('#loader').slideUp();
+    },800);
+
+
   }
 });
 
