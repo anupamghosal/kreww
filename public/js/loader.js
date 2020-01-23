@@ -30,8 +30,3 @@ queue.loadFile("../assets/services/background/painter.jpg");
 function handleComplete(){
 
 }
-
-$(document).ready(()=>{
-
-
-});

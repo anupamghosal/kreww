@@ -67,6 +67,7 @@
   background: #000;
   opacity: 1;
   border-radius: 25px;
+  transition: width 200ms ease-in;
 }
 
 .progress-cont{
