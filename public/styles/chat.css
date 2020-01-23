@@ -70,7 +70,7 @@
 }
 
 .chat-toggle, .chat, .chat-cont{
-  transition: width 50ms ease-out,height 350ms ease-out;
+  transition: width 100ms ease-out,height 350ms ease-out;
 }
 
 #output{
@@ -98,23 +98,36 @@
 
 #message {
   border-radius: 10px;
-  padding: 8px 15px;
+  padding: 12px 8px 15px 15px;
+  border-radius: 25px;
   width: 65%;
+  font-size: 1em;
   margin-right: 10px;
   flex-grow: 1;
   resize: none;
 }
 
 #send{
-  background-image: url("/assets/send.svg");
-  height: 2.5em;
-  width: 2.5em;
+
+  height: 3em;
+  width: 3em;
   padding: 5px;
+
   border-radius: 50%;
   background: #fff;
   border: none;
   font-weight: 900;
   cursor: pointer;
+
+}
+
+#send > span{
+  display: block;
+  background-image: url("/assets/send.svg");
+  height: 1.6em;
+  width: 1.6em;
+  margin: auto;
+  margin-right: 0.2em;
 }
 
 #input-area{
@@ -135,7 +148,7 @@
   right: 0;
   display: flex;
   margin-top: 0.25em;
-  transition-delay: 500ms;
+  transition-delay: 600ms;
   transition: all 800ms ease-out;
 }
 
@@ -148,7 +161,7 @@
   transform-origin: right;
   align-items: center;
   margin: auto;
-  transition-delay: 500ms;
+  transition-delay: 600ms;
   transition: all 800ms ease-out;
 }
 
@@ -175,4 +188,18 @@
   .chat-toggle{
     max-width: 350px;
   }
+}
+
+@media only screen and (max-width:650px) {
+  .chat{
+    position: fixed;
+    bottom:  1em;
+    right: 6.5em;
+  }
+
+  .chat-toggle{
+    border-radius: 25px;
+  }
+
+
 }

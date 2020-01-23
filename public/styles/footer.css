@@ -32,6 +32,9 @@ box-shadow: 0 0 10px #fff;
 }
 
 @keyframes glowy {
+  from{
+    box-shadow: 0 0 15px #fff;
+}
   to{
     box-shadow: 0 0 0px #666;
 }
@@ -85,5 +88,14 @@ p.foot{
   footer{
     grid-template-columns: auto;
     height: auto;
+  }
+
+
+  #copyright{
+    width: 96vw;
+  }
+
+  footer{
+    width: 90vw;
   }
 }

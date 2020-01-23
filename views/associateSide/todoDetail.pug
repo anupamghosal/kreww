@@ -8,6 +8,7 @@ block content
     if order.accepted
       include ../chat.pug 
     .centre-cont
+      h1.page-label Task detail
 
       != messages('message', local)
       if !order.done
@@ -50,24 +51,24 @@ block content
               a.accept.button.update(href='#' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
               a.reject.button(href='#' data-id=order._id) Ignore
        
-          
-            li.work.work-li.late
-              label I will reach
-              
-              select.lateDetail(name='late' id='delaySelect')
-                option(value='0') On time
-                option(value='5') 5 minutes late
-                option(value='10') 10 minutes late
-                option(value='15') 15 minutes late
-                option(value='20') 20 minutes late
-                option(value='25') 25 minutes late
-                option(value='30') 30 minutes late
-              a.button.submitDelay.update(type='button' id='submitDelay' value= 'OK' data-id=order._id) OK
-              
-            li.work.work-li
-              .in-line
-                input.otp(name="otp" type="number" placeholder='OTP' id='otp')
-                a.done.button.update(href="#" data-id=order._id) Done
+            if order.accepted && !order.done
+              li.work.work-li.late
+                label I will reach
+                
+                select.lateDetail(name='late' id='delaySelect')
+                  option(value='0') On time
+                  option(value='5') 5 minutes late
+                  option(value='10') 10 minutes late
+                  option(value='15') 15 minutes late
+                  option(value='20') 20 minutes late
+                  option(value='25') 25 minutes late
+                  option(value='30') 30 minutes late
+                a.button.submitDelay.update(type='button' id='submitDelay' value= 'OK' data-id=order._id) OK
+                
+              li.work.work-li
+                .in-line
+                  input.otp(name="otp" type="number" placeholder='OTP' id='otp')
+                  a.done.button.update(href="#" data-id=order._id) Done
       if order.done
         p This order is complete
         include ../review.pug

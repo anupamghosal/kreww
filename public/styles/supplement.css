@@ -9,6 +9,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+h4{
+  margin-right: 15px;
+}
+
 .centre-wrapper{
   position: relative;
   height: calc(100vh - 4em);
@@ -96,6 +100,7 @@ p{
 .in-col{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -109,7 +114,7 @@ div.todo{
 
 div.todo .button, .price{
   margin: 2px 0;
-  padding: 1.5px 20px;
+  padding:5px 20px;
   border-radius: 25px;
   font-size: 11px;
 
@@ -130,7 +135,7 @@ div.todo .button, .price{
 }
 
 .work{
-  width: 65%;
+  width: 60%;
   position: relative;
   padding: 15px 20px;
 }
@@ -141,16 +146,22 @@ div.todo .button, .price{
 }
 .work-label{
   padding: 2px 0;
+  padding-bottom: 1em;
   width: 100%;
-  text-align: center;
   color: #000;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.9em;
+}
+
+
+.info{
+  padding: 2px 0;
 }
 
 .res{
   top: 50%;
   transform: translateY(-50%);
+  height: 80%;
 }
 
 .in-line .accept, .in-line .reject{
@@ -225,27 +236,29 @@ span.status.green{
   text-fill-color: transparent;
   -webkit-background-clip: text,border;
   -webkit-text-fill-color: transparent;
-
-
+  -moz-background-clip: text,border;
+  -moz-text-fill-color: transparent;
 }
 
 
 
 span.status.yellow{
   border: 1px solid #969100;
-  background: linear-gradient(to right, #969100 25%, #96aa00 70%,#969100 100%);
+  background: linear-gradient(to right, #969100 25%, #e6de00 70%,#969100 100%);
   background-size: 200% auto;
   color: #000;
   background-clip: text,border;
   text-fill-color: transparent;
   -webkit-background-clip: text,border;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text,border;
+  -moz-text-fill-color: transparent;
 }
 
 
 span.status.wait{
   border: 1px solid #222;
-  background: linear-gradient(to right, #000 25%, #555 70%,#000 100%);
+  background: linear-gradient(to right, #000 25%, #aaa 70%,#000 100%);
 
   background-size: 200% auto;
   color: #000;
@@ -253,6 +266,8 @@ span.status.wait{
   text-fill-color: transparent;
   -webkit-background-clip: text,border;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text,border;
+  -moz-text-fill-color: transparent;
 }
 
 
@@ -288,7 +303,6 @@ span.status.wait{
 .star{
 color: #555;
 font-size: 1.75rem;
-//padding: 0 1rem;
 }
 .star::before{
 content: '\2606';
@@ -333,11 +347,17 @@ div.rating{
 }
 
 
+.info.address{
+
+}
+
 @media only screen and (max-width:650px)  {
   .centre-cont{
     max-width: 600px;
     width: 80vw;
   }
+
+
 
   form{
     padding: 0;
