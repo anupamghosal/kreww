@@ -1,5 +1,6 @@
 footer{
   padding: 5vw;
+  padding-bottom: 2vw;
   background: black;
   height: 25vh;
   width: 89.5vw;
@@ -22,11 +23,21 @@ footer{
   height: 40px;
   width: 40px;
   background-color: #fff;
-  box-shadow: 0 0 10px #444;
+box-shadow: 0 0 10px #fff;
   border-radius: 50%;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("/assets/thumbs.svg");
+  animation: glowy 2s ease infinite alternate;
+}
+
+@keyframes glowy {
+
+  from{
+    box-shadow: 0 0 10px #fff;
+  }
+  to{
+    box-shadow: 0 0 0px #fff;
 }
 
 .circle#a{
@@ -63,10 +74,11 @@ p.foot{
 
 #copyright {
   padding: 20px 0;
+  padding-left: 4vw;
   background-color: #000;
   color: #fff;
-  width: 99.5vw;
-  font-size: 0.6em;
+  width: 95.5vw;
+  font-size: 0.5em;
   font-weight: 200;
   text-align: center;
   font-size: 0.8em;
