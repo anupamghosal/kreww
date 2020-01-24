@@ -37,6 +37,7 @@ a{
   background-color: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
+  margin-bottom: 1.5em;
  }
 
 .container{
@@ -250,9 +251,7 @@ a{
     grid-template-columns: auto auto auto auto;
   }
 
-  .services{
-    max-width: 50vw;
-  }
+
   .item{
   height: calc(100vw/10 - 14em/6) ;
   }

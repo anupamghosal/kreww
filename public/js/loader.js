@@ -1,14 +1,18 @@
-
 var queue = new createjs.LoadQueue(false);
-
+var bar = $('#progress');
 queue.on("progress", event=>{
-  let progress = Math.floor(event.progress * 100)+"%";
-  console.log(progress);
-  $('#progress').css("width",progress);
-  if(progress == "100%") {
+  let progress = Math.floor(event.progress * 100);
+  bar.css("width",progress+"%");
+
+  if(progress > 90)
+  $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
+  if(progress == 100) {
+
     setTimeout(()=>{
-      $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
-        $('#loader').slideUp();
+        $('#loader svg').css({'transform': 'scale(0.5)', 'opacity': '0.4'});
+        $('#loader').slideUp(500);
+        $('#loader').css('z-index','8');
+        $('.progress-cont').css('display','none');
     },800);
 
 

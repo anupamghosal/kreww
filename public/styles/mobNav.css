@@ -53,6 +53,10 @@ border-radius: 10px;
 
 }
 
+.menu-item{
+	text-align: left !important;
+}
+
 .header{
 	z-index: 9;
 	position: sticky;
@@ -89,6 +93,7 @@ a.todo{
 	width: 100%;
 	min-height: 1.15em;
 	min-width: 1.15em;
+
 }
 
 #logo{
@@ -165,7 +170,7 @@ a.todo{
 .menu-wrap{
 	position: fixed;
 	top: 4em;
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.94);
   	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	height: 0px;
@@ -175,7 +180,7 @@ a.todo{
 	flex-direction: column;
 	align-items: center;
 	z-index: 99998;
-	transition: all 200ms ease-in-out;
+	transition: all 400ms ease-in-out;
 }
 
 .location-cont{
