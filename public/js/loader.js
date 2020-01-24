@@ -4,7 +4,7 @@ queue.on("progress", event=>{
   let progress = Math.floor(event.progress * 100);
   bar.css("width",progress+"%");
 
-  if(progress > 90)
+  if(progress > 98)
   $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
   if(progress == 100) {
 
