@@ -31,9 +31,8 @@ router.get('/:name', ensureCustomer, (req,res)=>{
 
     res.render('cart',{
       title: req.params.name,
-      services: services,
-      upcoming,
-      month
+      services,
+      upcoming
     });
   }
   else{

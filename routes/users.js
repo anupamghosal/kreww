@@ -138,7 +138,6 @@ router.get('/orders/:id',ensureCustomer, (req,res)=>{
       upcoming,
       username: req.user.id
     });
-    console.log(req.user);
   });
 });
 

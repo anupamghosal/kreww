@@ -97,7 +97,7 @@
 
 
 #message {
-  border-radius: 10px;
+  border: none;
   padding: 12px 8px 15px 15px;
   border-radius: 25px;
   width: 65%;
@@ -109,8 +109,8 @@
 
 #send{
 
-  height: 3em;
-  width: 3em;
+  height: 3.5em;
+  width: 3.5em;
   padding: 5px;
 
   border-radius: 50%;
@@ -124,10 +124,12 @@
 #send > span{
   display: block;
   background-image: url("/assets/send.svg");
+  background-repeat: no-repeat;
   height: 1.6em;
   width: 1.6em;
   margin: auto;
-  margin-right: 0.2em;
+  margin-right: 0.45em;
+  padding: 0.5px;
 }
 
 #input-area{
