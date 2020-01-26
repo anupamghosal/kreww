@@ -18,7 +18,4 @@ $(document).ready(function(){
 
   });
 
-  var element = $('#output');
-  element.scrollTop = element.scrollHeight;
-
 });

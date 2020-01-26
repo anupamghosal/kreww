@@ -30,7 +30,8 @@
 }
 
 #loader path{
-  transition: all 800ms ease;
+  fill: #000;
+  transition: all 400ms ease;
   animation: anim-stroke 1200ms ease-in-out forwards infinite 200ms;
 }
 

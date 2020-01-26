@@ -19,11 +19,12 @@ block content
                 if order.service && !order.Repair
                   - var todo = " service";
                 if order.service && order.repair
-                  - var todo = "repair and service";
+                  - var todo = " repair and service";
                 .todo
                   .in-col.work
-                    a.work-label.mar-bot(href='/associate/'+order._id)= order.work + ' ' +todo
                     .info-grp
+                      a.work-label.mar-bot(href='/associate/'+order._id)
+                        h4= order.work + todo
                       if order.accepted && !order.done
                         p
                           span.status.yellow ongoing
@@ -32,26 +33,25 @@ block content
                           span.status.green completed
                       if !order.accepted && !order.done
                         p
-                          span.status waiting
-                    .in-line.mar-top
-                      .in-col
-                        span.info.address= order.address
-                        span.info.arcode= order.areacode
-                      if order.time === 7 || order.time === 11 || order.time === 9
-                        span.info.time.right= 'at '+order.time+ ' AM'
-                        
-                      if order.time === 3 || order.time === 5
-                        span.info.time.right= 'at '+order.time + ' PM' 
+                          span.status.wait waiting
+                      
+                      .in-line
+                      
+                        div
+                          span= order.date
+                          br
+                          if order.time == 7 || order.time == 9 || order.time == 11
+                            span= order.time+ ' AM'
+                          if order.time == 3 || order.time == 5 
+                            span= order.time+ ' PM'
                   .in-col.right.res
-                    span
+                    
                     span.price $20
                     span
+                    a.button(href='/users/orders/'+order.id) Details &#0020 &#0020 &#10217
       if !orders 
       
         p You have nothing scheduled!
   
         a.button(href="/associate/todo") Get Scheduled
-        
-      
-      
-    
+  

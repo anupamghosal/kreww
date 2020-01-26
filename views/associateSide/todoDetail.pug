@@ -4,77 +4,81 @@ block content
 
 
   link(rel='stylesheet', href='/styles/supplement.css', type='text/css')
-  .centre-wrapper
-    if order.accepted
-      include ../chat.pug 
-    .centre-cont
-      h1.page-label Task detail
+  if order
+    .centre-wrapper
+      if order.accepted && !order.done
+        include ../chat.pug 
+      .centre-cont
+        h1.page-label Task detail
 
-      != messages('message', local)
-      if !order.done
+        != messages('message', local)
+        if !order.done
 
-        if order.repair && !order.service
-          - var todo = " repair";  
-        if order.service && !order.Repair
-          - var todo = " service";
-        if order.service && order.repair
-          - var todo = " repair and service";
-        h1.work-label= order.work + ' ' +todo
-        
-        
-        
-        ul 
-          li.work.work-li
-            strong From:
-            span= ' '+order.name
+          if order.repair && !order.service
+            - var todo = " repair";  
+          if order.service && !order.Repair
+            - var todo = " service";
+          if order.service && order.repair
+            - var todo = " repair and service";
+          h1.work-label= order.work + ' ' +todo
           
-          li.work.work-li
-            strong Address:
-            span= ' '+order.address
-          li.work.work-li
-            strong Area code:
-            span= ' '+order.areacode
-      
-          li.work.work-li
-            strong Date:
-            span= ' '+order.date
+          
+          
+          ul 
+            li.work.work-li
+              strong From:
+              span= ' '+order.name
             
-          li.work.work-li
-            strong Time:
-            if order.time === 7 || order.time === 11 || order.time === 9
-              span= ' '+order.time+ ' AM'
+            li.work.work-li
+              strong Address:
+              span= ' '+order.address
+            li.work.work-li
+              strong Area code:
+              span= ' '+order.areacode
+        
+            li.work.work-li
+              strong Date:
+              span= ' '+order.date
               
-            if order.time === 3 || order.time === 5
-              span= ' '+order.time + ' PM'
-          if !order.accepted  
-            li.work.in-line.work-li
-              a.accept.button.update(href='#' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
-              a.reject.button(href='#' data-id=order._id) Ignore
-       
-            if order.accepted && !order.done
-              li.work.work-li.late
-                label I will reach
+            li.work.work-li
+              strong Time:
+              if order.time === 7 || order.time === 11 || order.time === 9
+                span= ' '+order.time+ ' AM'
                 
-                select.lateDetail(name='late' id='delaySelect')
-                  option(value='0') On time
-                  option(value='5') 5 minutes late
-                  option(value='10') 10 minutes late
-                  option(value='15') 15 minutes late
-                  option(value='20') 20 minutes late
-                  option(value='25') 25 minutes late
-                  option(value='30') 30 minutes late
-                a.button.submitDelay.update(type='button' id='submitDelay' value= 'OK' data-id=order._id) OK
-                
-              li.work.work-li
-                .in-line
-                  input.otp(name="otp" type="number" placeholder='OTP' id='otp')
-                  a.done.button.update(href="#" data-id=order._id) Done
-      if order.done
-        p This order is complete
-        include ../review.pug
+              if order.time === 3 || order.time === 5
+                span= ' '+order.time + ' PM'
+            if !order.accepted  
+              li.work.in-line.work-li
+                a.accept.button.update(href='#' data-id=order._id data-user=user.firstName+' '+user.lastName) Claim
+                a.reject.button(href='#' data-id=order._id) Ignore
+         
+              if order.accepted && !order.done
+                li.work.work-li.late
+                  label I will reach
+                  
+                  select.lateDetail(name='late' id='delaySelect')
+                    option(value='0') On time
+                    option(value='5') 5 minutes late
+                    option(value='10') 10 minutes late
+                    option(value='15') 15 minutes late
+                    option(value='20') 20 minutes late
+                    option(value='25') 25 minutes late
+                    option(value='30') 30 minutes late
+                  a.button.submitDelay.update(type='button' id='submitDelay' value= 'OK' data-id=order._id) OK
+                  
+                li.work.work-li
+                  .in-line
+                    input.otp(name="otp" type="number" placeholder='OTP' id='otp')
+                    a.done.button.update(href="#" data-id=order._id) Done
+        if order.done
+          p This order is complete
+          include ../review.pug
           
     script(src='/bower-components/jquery/dist/jquery.js')        
     script(src='/js/accept.js')
     script(src='/js/reject.js')
     script(src='/js/handle.js')
     script(src='/js/done.js')
+  if !order
+    include notfound.pug
+    a.button(href='/users/orders') Go to Orders

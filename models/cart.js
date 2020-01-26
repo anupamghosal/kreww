@@ -63,6 +63,10 @@ let cartSchema = mongoose.Schema({
 
   done: {
     type: Boolean
+  },
+
+  chat: {
+    type: Array
   }
 
 });

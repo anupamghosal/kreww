@@ -232,11 +232,11 @@ span.status.green{
   background: linear-gradient(to right, #2c9645 25%, #2c9645 70%,#2c9645 100%);
   background-size: 100% auto;
   color: #000;
-  background-clip: text,border;
+  background-clip: text;
   text-fill-color: transparent;
-  -webkit-background-clip: text,border;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text,border;
+  -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
 
@@ -249,9 +249,9 @@ span.status.yellow{
   color: #000;
   background-clip: text,border;
   text-fill-color: transparent;
-  -webkit-background-clip: text,border;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text,border;
+  -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
 
@@ -262,11 +262,11 @@ span.status.wait{
 
   background-size: 200% auto;
   color: #000;
-  background-clip: text,border;
+  background-clip: text;
   text-fill-color: transparent;
-  -webkit-background-clip: text,border;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text,border;
+  -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
 

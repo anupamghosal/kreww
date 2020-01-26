@@ -15,7 +15,7 @@ const services = require('./Service');
 const appliances = require('./Appliance');
 
 
-
+let Cart = require('./models/cart');
 
 
 
@@ -92,13 +92,36 @@ app.use(passport.session());
 
 //socket ----------------------
 
+
 io.on('connection', function(socket){
   socket.on('refresh', (associate, order)=>{
     io.emit('response', associate,order);
   });
 
+
+  socket.on('getChat', (order)=>{
+    Cart.findById({_id:order}, (err,ord)=> {
+      if(err)
+      throw err;
+
+      else{
+        var chats = ord.chat;
+        socket.emit('outputChat', chats);
+      }
+
+    });
+  });
+
+
+
   socket.on('chat', function(data){
     io.sockets.emit('chat', data);
+    let chat = {};
+    chat.handle = data.handle;
+    chat.message = data.message;
+    Cart.findOneAndUpdate({_id:data.order}, {$push: {chat: chat}}, (err)=>{
+      if(err) throw err;
+    });
   });
 
   socket.on('disconnect', function(){

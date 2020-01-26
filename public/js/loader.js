@@ -4,10 +4,9 @@ queue.on("progress", event=>{
   let progress = Math.floor(event.progress * 100);
   bar.css("width",progress+"%");
 
-  if(progress > 98)
-  $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
-  if(progress == 100) {
 
+  if(progress == 100) {
+      $('#loader path').css({ 'fill': '#fff', 'stroke-width': '0px'});
     setTimeout(()=>{
         $('#loader svg').css({'transform': 'scale(0.5)', 'opacity': '0.4'});
         $('#loader').slideUp(500);
