@@ -1,19 +1,26 @@
 $(document).ready(()=>{
-  $('.mob.location-input').focus(()=>{
+  var text = $('.mob.location-input');
+  var container = $('.mob.location-cont');
+  var header = $('.header');
+  var menuWrap = $('.mob.menu-wrap')
+  var btn = $('.mob.cancelBtn');
+  var menuItem = $(".mob.menu-item");
 
-    $('.mob.location-cont').css('width', '95vw');
-    $('.header').animate({"position": "absolute", "right": "0","left": "0","top": "-4em"},0);
-    $('.mob.menu-wrap').css({"top": "0","height": "100vh"});
-    $('.mob.cancelBtn').css({"margin-right": "2px","opacity": "1"});
-    $(".mob.menu-item").css("opacity", "0");
+  text.focus(()=>{
+
+    container.css('width', '95vw');
+    header.css({"height":"0", "padding" : "0"});
+    menuWrap.css({"top": "0","height": "100vh"});
+    btn.css({"margin-right": "2px","opacity": "1"});
+    menuItem.css("opacity", "0");
   });
 
   $('.mob.cancelBtn').click(()=>{
-    $('.mob.location-cont').css('width', '80vw');
-    $('.header').animate({"top":"0", "position": "sticky"},0);
-    $('.mob.menu-wrap').css({"top": "4em","height": "calc(100vh - 4em)"});
-    $('.mob.cancelBtn').css({"margin-right": "-5px","opacity": "0"});
-    $(".mob.menu-item").css("opacity", "1");
+    container.css('width', '80vw');
+    header.css({"height":"2em", "padding" : "1em 1.5em"});
+    menuWrap.css({"top": "4em","height": "calc(100vh - 4em)"});
+    btn.css({"margin-right": "-5px","opacity": "0"});
+    menuItem.css("opacity", "1");
   });
 
 });
