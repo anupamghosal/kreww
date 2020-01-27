@@ -179,23 +179,20 @@ a.todo{
 }
 
 .location-cont{
-	width: 80vw;
+	width: 92vw;
 	background-color: inherit;
 	height: 3em;
 	margin: 1.5em;
 	border-radius: 10px;
 	display: flex;
-	transition: width 300ms ease-out;
 	}
 
 .location-img{
-
 	margin: 12px;
 	width: 1em;
 }
 
 .location-input{
-	text-align: center;
 	width: calc(95vw - 1em - 16px);
 	background-color: rgba(0,0,0,0);
 	border: none;
