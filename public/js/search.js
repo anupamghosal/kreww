@@ -17,4 +17,10 @@ $(document).ready(()=>{
     menuItem.css("opacity", "1");
   });
 
+  $('#hamburger').click(()=>{
+    container.css('width', '80vw');
+    btn.css({"margin-right": "-5px","opacity": "0"});
+    menuItem.css("opacity", "1");
+  })
+
 });
