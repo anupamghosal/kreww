@@ -52,9 +52,9 @@ input:focus{
 	}
 
   .location-img{
-    margin: 2px;
+    margin: 3px 0;
     width: 2em;
-    margin-left: -0.5em;
+    margin-left: -1.5em;
     opacity: 0;
     order: 1;
     transition: all 250ms ease-in;
@@ -62,12 +62,13 @@ input:focus{
   .location-input{
     order: 2;
     color: #fff;
+    width: 25vw;
   }
 
  .web.cancelBtn{
     order: 3;
     padding: 0px;
-    margin-right: -5px;
+    margin-right: -1.5em;
     opacity: 0;
 
   }
@@ -75,6 +76,7 @@ input:focus{
 .location-input:focus ~ .web.cancelBtn{
   margin-right: 10px;
   opacity: 1;
+  cursor: pointer;
 }
 
 
