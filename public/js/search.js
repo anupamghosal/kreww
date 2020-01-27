@@ -15,12 +15,14 @@ $(document).ready(()=>{
     container.css('width', '80vw');
     btn.css({"margin-right": "-5px","opacity": "0"});
     menuItem.css("opacity", "1");
+    text.val('');
   });
 
   $('#hamburger').click(()=>{
     container.css('width', '80vw');
     btn.css({"margin-right": "-5px","opacity": "0"});
     menuItem.css("opacity", "1");
+    text.val('');
   })
 
 });
