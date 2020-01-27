@@ -1,11 +1,11 @@
  function toggleMenu() {
     var toggle = document.getElementById("toggling");
 
-    if (toggle.style.height === "calc(100vh - 4em)")
+    if (toggle.style.height === "calc(100vh - 3.5em)")
     {
     toggle.style.height = "0px";
     } else{
-      toggle.style.height = "calc(100vh - 4em)";
+      toggle.style.height = "calc(100vh - 3.5em)";
     }
 
     var anim =  document.getElementById("line");

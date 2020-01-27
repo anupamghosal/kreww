@@ -61,7 +61,7 @@ border-radius: 10px;
 	top:0%;
 	display: flex;
 	flex-grow: 1;
-	height: 2em;
+	height: 1.5em;
 	background: #000;
 	color: rgba(255,255,255,1);
 	padding: 1em 1.5em;
@@ -155,8 +155,8 @@ a.todo{
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	height: 2em;
-	width: 2em;
+	height: 1.5em;
+	width: 1.5em;
 	margin: auto 0;
 }
 
@@ -164,8 +164,8 @@ a.todo{
 
 .menu-wrap{
 	position: fixed;
-	top: 4em;
-	background-color: rgba(0,0,0,0.9);
+	top: 3.5em;
+	background-color: rgba(0,0,0,0.85);
   backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	height: 0px;
@@ -216,21 +216,20 @@ a.todo{
 	list-style: none;
 	padding: 1em;
 	border-bottom: 0.2px solid #555;
-	color: #eee;
+
 
 }
 
 .mob.menu-item{
-	text-align: left !important;
-	transform: scale(0.7);
-	opacity: 0;
+	text-align: left;
+	transform: scale(0.5);
+	color: rgba(0,0,0,0);
 	transform-origin: left;
-	transition-delay: 50ms;
-	transition: opacity 250ms ease-out, transform 250ms ease-out;
+	transition: color 300ms ease-out,transform 300ms ease-out;
 }
 
 .menu-item.opened{
-	opacity: 1;
+	color: #eee;
 	transform: scale(1);
 }
 
