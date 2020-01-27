@@ -1,12 +1,13 @@
-#toggling.menu-wrap
-  .location-cont
-    img.location-img(src='/assets/location.svg')
-    input.location-input(type='text', name='Location', placeholder='Location')
-  ul.menu-cont
+#toggling.menu-wrap.mob
+  .location-cont.mob
+    img.location-img(src='/assets/srch.svg')
+    input.location-input.mob(type='text', name='Location', placeholder='search kreww.com')
+    button.cancelBtn.mob cancel
+  ul.menu-cont.mob
     a.item-ref(href='/')
-      li.menu-item Home
+      li.menu-item.mob Home
     a.item-ref(href='/users/profile')
-      li.menu-item Profile
+      li.menu-item.mob Profile
 
 // Mobile Nav ends
 
@@ -20,8 +21,11 @@
   // web Nav
   .webmenu-wrap
     .location-cont
-      input.location-input(type='text', name='Location', placeholder='Enter Location')
-      img.location-img(src='/assets/location.svg')
+      
+      input.location-input(type='text', name='Location', placeholder='search kreww.com')
+      img.location-img(src='/assets/srch.svg')
+      button.cancelBtn.web cancel
+      
     ul.web-menu
       a.Hover.item-ref(href='/')
         li.menu-item Home
@@ -35,5 +39,5 @@
     #todo.nav
     
     
-  
+  script(src="/js/search.js", type="text/javascript")
   

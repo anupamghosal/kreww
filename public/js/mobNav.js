@@ -9,11 +9,18 @@
     }
 
     var anim =  document.getElementById("line");
+    var items = document.querySelectorAll(".menu-item");
     if (anim.classList.contains("open"))
     {
     anim.classList.remove("open");
+    items.forEach((el,i)=>{
+      el.classList.remove("opened");
+    });
     } else{
       anim.classList.add("open");
+      items.forEach((el,i)=>{
+        el.classList.add("opened");
+      });
     }
 
     var noScroll = document.body;
