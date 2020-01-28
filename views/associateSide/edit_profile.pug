@@ -17,22 +17,22 @@ block content
     .user-detail
       ul.user-details
         li.user-detail-item
-          h3 Email:
+          h3 Email :
           input(type='email', value=user.email, name='email')
         li.user-detail-item
-          h3 Saved address:
+          h3 Saved address :
           if user.address
             input(type='text', value=user.address, name='aaddress')
           if !user.address
             div No address added
         li.user-detail-item
-          h3 Contact Number:
+          h3 Contact Number :
           if user.phone
             input(type='number', value=user.phone, name='phone')
           if !user.phone
             div.detail No phone Number added
         li.user-detail-item
-          h3 Saved cards:
+          h3 Saved cards :
           if user.card
             div.detail #{user.card}
           if !user.card

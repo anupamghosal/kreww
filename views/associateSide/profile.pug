@@ -16,22 +16,22 @@ block content
     .user-detail
       ul.user-details
         li.user-detail-item
-          h3 Email:
+          h3 Email :
           div #{associate.email}
         li.user-detail-item
-          h3 Saved address:
+          h3 Saved address :
           if associate.address
             div #{associate.address}
           if !associate.address
             div No address added
         li.user-detail-item
-          h3 Contact Number:
+          h3 Contact Number :
           if associate.phone
             div.detail #{associate.phone}
           if !associate.phone
             div.detail No phone Number added
         li.user-detail-item
-          h3 Saved cards:
+          h3 Saved cards :
           if associate.card
             div.detail #{associate.card}
           if !associate.card
