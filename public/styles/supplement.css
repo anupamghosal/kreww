@@ -1,31 +1,25 @@
-*{
-  font-family: roboto;
-}
-
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-h4{
+h4 {
   margin-right: 15px;
 }
 
-
-.centre-wrapper{
+.centre-wrapper {
   position: relative;
   height: calc(100vh - 4em);
   display: flex;
   width: 100%;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.centre-cont{
+.centre-cont {
   position: relative;
   margin: auto;
   width: 30vw;
@@ -35,28 +29,30 @@ li{
   flex-direction: column;
 }
 
-.centre-cont h1, .centre-cont a{
+.centre-cont h1,
+.centre-cont a {
   margin: 20px 0;
 }
 
-.centre h1{
+.centre h1 {
   font-weight: 400;
   font-size: 15px;
 }
-.order-list{
+.order-list {
   position: absolute;
   width: 80vw;
 }
-.order-li, .work-li{
+.order-li,
+.work-li {
   position: relative;
   border-radius: 10px;
-  background: rgba(242, 242, 242,0.5);
+  background: rgba(242, 242, 242, 0.5);
   display: flex;
   padding: 10px 20px;
   margin-top: 15px;
   padding: 15px;
 }
-.order-li .button{
+.order-li .button {
   position: absolute;
   margin: auto;
   margin-top: 0;
@@ -65,16 +61,16 @@ li{
   width: 100px;
 }
 
-.info-grp h4{
+.info-grp h4 {
   margin-bottom: 7px;
 }
- .in-line span{
+.in-line span {
   font-size: 12px;
   opacity: 0.8;
 }
 
-
-.button, .price{
+.button,
+.price {
   margin: 12px 0;
   background: #000;
   border: 1.5px solid #000;
@@ -90,62 +86,60 @@ li{
   transition: all 200ms ease-in-out;
 }
 
-.button:hover{
+.button:hover {
   color: #fff;
 }
 
-p{
+p {
   font-weight: 300;
 }
 
-.in-col{
+.in-col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
-div.todo{
-  display:flex;
+div.todo {
+  display: flex;
   border-radius: 10px;
   background-color: #f2f2f2;
   position: relative;
-
 }
 
-div.todo .button, .price{
+div.todo .button,
+.price {
   margin: 2px 0;
-  padding:5px 20px;
+  padding: 5px 20px;
   border-radius: 25px;
   font-size: 11px;
-
 }
 
-.price{
+.price {
   background-color: #eee;
   color: #000;
 }
 
-.in-line{
+.in-line {
   display: flex;
 }
 
-.right{
+.right {
   position: absolute;
   right: 20px;
 }
 
-.work{
+.work {
   width: 60%;
   position: relative;
   padding: 15px 20px;
 }
 
-.work a{
+.work a {
   margin: 0;
   text-decoration: none;
 }
-.work-label{
+.work-label {
   padding: 2px 0;
   padding-bottom: 1em;
   width: 100%;
@@ -154,43 +148,43 @@ div.todo .button, .price{
   font-size: 0.9em;
 }
 
-
-.info{
+.info {
   padding: 2px 0;
 }
 
-.res{
+.res {
   top: 50%;
   transform: translateY(-50%);
   height: 80%;
 }
 
-.in-line .accept, .in-line .reject{
+.in-line .accept,
+.in-line .reject {
   flex-grow: 1;
   margin: 0 3px;
 }
 
-.work-li{
+.work-li {
   width: calc(100% - 25px);
 }
 
-.work-li.in-line{
+.work-li.in-line {
   background: #fff;
 }
 
-.work-li span{
+.work-li span {
   margin-left: 5px;
 }
 
-.list-group-item{
+.list-group-item {
   margin: 15px 0;
 }
 
-form{
-  border:none;
+form {
+  border: none;
 }
 
-.lateDetail{
+.lateDetail {
   border-radius: 5px;
   border: 1.5px solid #000;
   padding: 0 0.75em;
@@ -199,7 +193,7 @@ form{
   outline: none;
   margin-right: 5px;
 }
-.done{
+.done {
   padding: 7px 40px;
   height: 1em;
   margin: 12px 0;
@@ -215,22 +209,20 @@ input.otp {
   border-radius: 10px;
   margin-right: 20px;
   width: 45%;
-  }
-
-
-span.status{
-font-size: 10px;
-font-weight: 600;
-border-radius: 25px;
-padding: 2.5px 10px;
-text-align: center;
-animation: ongoing 3s linear infinite;
-
 }
 
-span.status.green{
+span.status {
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 2.5px 10px;
+  text-align: center;
+  animation: ongoing 3s linear infinite;
+}
+
+span.status.green {
   border: 1px solid #2c9645;
-  background: linear-gradient(to right, #2c9645 25%, #2c9645 70%,#2c9645 100%);
+  background: linear-gradient(to right, #2c9645 25%, #2c9645 70%, #2c9645 100%);
   background-size: 100% auto;
   color: #000;
   background-clip: text;
@@ -241,14 +233,12 @@ span.status.green{
   -moz-text-fill-color: transparent;
 }
 
-
-
-span.status.yellow{
+span.status.yellow {
   border: 1px solid #969100;
-  background: linear-gradient(to right, #969100 25%, #e6de00 70%,#969100 100%);
+  background: linear-gradient(to right, #969100 25%, #e6de00 70%, #969100 100%);
   background-size: 200% auto;
   color: #000;
-  background-clip: text,border;
+  background-clip: text, border;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -256,10 +246,9 @@ span.status.yellow{
   -moz-text-fill-color: transparent;
 }
 
-
-span.status.wait{
+span.status.wait {
   border: 1px solid #222;
-  background: linear-gradient(to right, #000 25%, #aaa 70%,#000 100%);
+  background: linear-gradient(to right, #000 25%, #aaa 70%, #000 100%);
 
   background-size: 200% auto;
   color: #000;
@@ -271,27 +260,27 @@ span.status.wait{
   -moz-text-fill-color: transparent;
 }
 
-
 @keyframes ongoing {
-    to {
-      background-position: 200% center;
-    }
+  to {
+    background-position: 200% center;
   }
+}
 
-.mar-top{
+.mar-top {
   margin-top: 6px;
 }
 
-.mar-bot{
+.mar-bot {
   margin-bottom: 10px;
 }
 
-
-.late{
+.late {
   display: flex;
 }
 
-.late > select, .late > label, .late > a{
+.late > select,
+.late > label,
+.late > a {
   flex-basis: 28%;
   flex-grow: 1;
 }
@@ -300,67 +289,58 @@ span.status.wait{
   margin: auto;
 }
 
-
-.star{
-color: #555;
-font-size: 1.75rem;
+.star {
+  color: #555;
+  font-size: 1.75rem;
 }
-.star::before{
-content: '\2606';
-cursor: pointer;
+.star::before {
+  content: "\2606";
+  cursor: pointer;
 }
-.star:hover::before{
-content: '\2605';
-color: #555;
+.star:hover::before {
+  content: "\2605";
+  color: #555;
 }
-.star.rated::before{
-color: #000;
-content: '\2605';
-}
-
-
-textarea.review{
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 50px;
-    width: 90%;
-    padding: 5px 10px;
-    margin-top: 10px;
-    resize: none;
+.star.rated::before {
+  color: #000;
+  content: "\2605";
 }
 
+textarea.review {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 50px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  resize: none;
+}
 
-div.rating{
+div.rating {
   width: 80%;
   border: 1px solid #000;
   border-radius: 10px;
   margin-top: 2em;
   padding: 10px 20px;
-
-
 }
 
-#reviewSub{
+#reviewSub {
   display: inline-block;
-  padding:5px 20px;
+  padding: 5px 20px;
   margin-right: 0;
   margin-top: 0.5em;
 }
 
-
-.info.address{
-
+.info.address {
 }
 
-@media only screen and (max-width:650px)  {
-  .centre-cont{
+@media only screen and (max-width: 650px) {
+  .centre-cont {
     max-width: 600px;
     width: 80vw;
   }
 
-
-
-  form{
+  form {
     padding: 0;
   }
 }
