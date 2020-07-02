@@ -70,6 +70,7 @@ a.todo {
   height: 1.75em;
   width: 1.5em;
   position: relative;
+  margin: auto 0;
 }
 
 #todo {

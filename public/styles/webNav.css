@@ -1,46 +1,45 @@
-@media only screen and (min-width:650px) {
-
-  #hamburger , .menu-wrap{
+@media only screen and (min-width: 650px) {
+  #hamburger,
+  .menu-wrap {
     display: none;
   }
 
-input:focus{
-  outline: none;
-}
-  .header{
+  input:focus {
+    outline: none;
+  }
+  .header {
     height: 4vh;
     padding-left: 5em;
     padding-right: 5em;
   }
 
-  #todo{
-
-  	background-position: left;
+  #todo {
+    background-position: left;
     height: auto;
   }
 
-  #logo{
-
+  #logo {
     height: auto;
     margin: 1px;
     background-position: right;
     margin-right: 3em;
   }
 
-  .webmenu-wrap{
+  .webmenu-wrap {
     justify-content: center;
+    align-items: center;
     display: flex;
-    margin: 0 30px
+    margin: 0 30px;
   }
 
-  .web-menu{
+  .web-menu {
     display: flex;
     align-items: baseline;
     justify-content: center;
   }
 
-  .location-cont{
-  	width: 25vw;
+  .location-cont {
+    width: 25vw;
     margin: 0 1em;
     padding: 3px;
     height: 1.5em;
@@ -48,10 +47,9 @@ input:focus{
     font-size: 0.8em;
     align-items: right;
     overflow: hidden;
+  }
 
-	}
-
-  .location-img{
+  .location-img {
     margin: 3px 0;
     width: 2em;
     margin-left: -1.5em;
@@ -59,52 +57,41 @@ input:focus{
     order: 1;
     transition: all 250ms ease-in;
   }
-  .location-input{
+  .location-input {
     order: 2;
     color: #fff;
     width: 25vw;
   }
 
- .web.cancelBtn{
+  .web.cancelBtn {
     order: 3;
     padding: 0px;
     margin-right: -1.5em;
     opacity: 0;
-
   }
 
-.location-input:focus ~ .web.cancelBtn{
-  margin-right: 10px;
-  opacity: 1;
-  cursor: pointer;
-}
+  .location-input:focus ~ .web.cancelBtn {
+    margin-right: 10px;
+    opacity: 1;
+    cursor: pointer;
+  }
 
-
-
-  .location-input:focus + .location-img{
+  .location-input:focus + .location-img {
     margin-left: 0;
     opacity: 1;
-    }
+  }
 
+  .menu-cont {
+    height: 1.5em;
+    align-items: baseline;
+  }
 
-
-    .menu-cont{
-      height: 1.5em;
-      align-items: baseline;
-    }
-
-    .menu-item{
-      border-bottom: none;
-      color: #ddd;
-      padding: 0 1.5em;
-      font-weight: 300;
-      font-size: 0.8em;
-      margin-top: 0.75em;
-    }
-
-
-
-
-
-
+  .menu-item {
+    border-bottom: none;
+    color: #ddd;
+    padding: 0 1.5em;
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-top: 0.75em;
+  }
 }
